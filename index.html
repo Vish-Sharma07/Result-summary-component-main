@@ -3,17 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-
     <title>Frontend Mentor | Results summary component</title>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -32,19 +23,30 @@
       <div class="summary">
         <h3>Summary</h3>
         <div class="summary-item reaction">
-          Reaction <span><strong>80</strong> / 100</span>
+          Reaction ⚡ <span><strong>80</strong> / 100</span>
         </div>
         <div class="summary-item memory">
-          Memory <span><strong>92</strong> / 100</span>
+          Memory 🧠  <span><strong>92</strong> / 100</span>
         </div>
         <div class="summary-item verbal">
-          Verbal <span><strong>61</strong> / 100</span>
+          Verbal  🗣️<span><strong>61</strong> / 100</span>
         </div>
         <div class="summary-item visual">
-          Visual <span><strong>73</strong> / 100</span>
+          Visual  👁️ <span><strong>73</strong> / 100</span>
         </div>
         <button>Continue</button>
       </div>
     </div>
+    <script>
+      let count = 0;
+      const target = 76;
+      const el = document.querySelector(".score-circle h1");
+
+      const interval = setInterval(() => {
+        count++;
+        el.textContent = count;
+        if (count >= target) clearInterval(interval);
+      }, 20);
+    </script>
   </body>
 </html>
